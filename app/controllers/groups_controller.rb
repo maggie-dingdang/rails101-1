@@ -9,27 +9,7 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
   end
 
-  ddef edit
-  end
-
-    if current_user != @group.user
-      redirect_to root_path, alert: "You have no permission."
-    end
-  end
-
-  def new
-    @group = Group.new
-  end
-
-  def create
-    @group = Group.new(group_params)
-    @group.user = current_user
-
-    if @group.save
-      redirect_to groups_path
-    else
-      render :new
-    end
+  def edit
   end
 
   def update
